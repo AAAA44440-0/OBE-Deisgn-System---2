@@ -1,0 +1,267 @@
+/* ============================================================
+   OBE Design System — colors_and_type.css
+   Crypto exchange / Web3 wallet. Light + Dark themes.
+   Brand orange #F59505. Buy=green, Sell=magenta.
+   Fonts: Switzer (display/numerals), IBM Plex Sans (UI), PingFang SC (CJK).
+   ------------------------------------------------------------
+   Layer 1 — primitive palette  (do NOT use directly in product)
+   Layer 2 — semantic tokens     (use these)
+   Layer 3 — type roles          (h1…/body/mono/numeric)
+   Theme:  default = light.  Add  data-theme="dark"  or  class="dark"
+           to <html> for dark mode.
+   ============================================================ */
+
+/* ---- Fonts (CDN) -------------------------------------------------------- */
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ===== Layer 1 · Primitive palette ===================================== */
+  /* Brand orange */
+  --obe-brand-1:  #FEF4E6;
+  --obe-brand-5:  #F7AA37;
+  --obe-brand-6:  #F59505;   /* core brand */
+  --obe-brand-11: #311E01;
+
+  /* Orange (warm accent / backgrounds) */
+  --obe-orange-1:  #FFF7ED;
+  --obe-orange-10: #7C2D12;
+  --obe-orange-11: #431407;
+
+  /* Neutral gray ramp (gary) */
+  --obe-gary-1:  #FFFFFF;
+  --obe-gary-2:  #F7F7FA;
+  --obe-gary-3:  #EAEAED;
+  --obe-gary-4:  #DEDFE0;
+  --obe-gary-6:  #8E8E92;
+  --obe-gary-7:  #57585C;
+  --obe-gary-8:  #38393D;
+  --obe-gary-9:  #18191B;
+  --obe-gary-10: #131516;
+  --obe-gary-11: #070808;
+  --obe-gary-12: #0D0E0F;
+  --obe-gary-dark-11: #1F2023;
+
+  --obe-base-black: #070808;
+  --obe-base-white: #FFFFFF;
+
+  /* Functional — Success (green / buy) */
+  --obe-greenfunct-1:  #EAF9EB;
+  --obe-greenfunct-6:  #2BC235;
+  --obe-greenfunct-10: #072108;
+  --obe-success-1: #00AB6C;   /* buy button */
+  --obe-success-2: #2AD36C;
+  --obe-success-3: #05903C;
+
+  /* Functional — Danger (red/magenta / sell) */
+  --obe-redfunct-1:  #FEEEED;
+  --obe-redfunct-6:  #F7594B;
+  --obe-redfunct-10: #2F0C08;
+  --obe-red-6: #F0616D;
+  --obe-red-7: #F6475D;
+  --obe-danger-1: #ED4178;    /* sell button (magenta) */
+  --obe-danger-2: #E35582;
+  --obe-danger-3: #CA2458;
+
+  /* Accent lime (tags/labels) */
+  --obe-lime: #8CFA2B;
+
+  /* ===== Layer 2 · Semantic tokens (LIGHT) ============================== */
+  /* Text & icon */
+  --fg-1:        #000000;   /* primary text */
+  --fg-2:        #57585C;   /* secondary text */
+  --fg-3:        #8E8E92;   /* tertiary text */
+  --fg-4:        #C3C3C7;   /* quaternary text */
+  --fg-disabled: #E2E2E2;   /* disabled / placeholder */
+  --fg-brand:    #F59505;
+  --fg-inverse:  #FFFFFF;   /* text on dark/inverse surfaces */
+  --fg-always-black: #070808;
+  --fg-always-white: #FFFFFF;
+  --fg-success:  #2BC235;
+  --fg-error:    #F7594B;
+  --fg-tips:     #57585C;
+
+  /* Backgrounds */
+  --bg-base:     #FFFFFF;   /* BG-2 page background */
+  --bg-layer:    #F7F7FA;   /* BG-1 divider/section layer */
+  --bg-pop:      #FFFFFF;   /* BG-3 popover/modal surface */
+  --bg-inverse:  #0B0C0E;   /* BG-4 inverse surface */
+  --bg-input:    #F7F7FA;
+  --bg-brand:    #FEF4E6;   /* tinted brand surface */
+  --bg-orange:   #FFF7ED;
+  --bg-tooltip:  #38393D;
+  --bg-mask:     #0E0F1180; /* 50% modal overlay */
+  --bg-mask-55:  #0B0C0E8C;
+  --bg-mask-75:  #0B0C0EBF;
+
+  /* Fills (container fills) */
+  --fill-1: #E1E3EB;  /* component fill */
+  --fill-2: #F3F4F7;  /* input fill */
+  --fill-3: #F9F9FB;  /* light block fill */
+  --fill-brand: #F59505;
+  --fill-lime:  #8CFA2B;
+
+  /* Borders & dividers */
+  --border-primary:   #00000014;  /* 8% */
+  --border-secondary: #00000024;  /* 14% */
+  --border-selected:  #000000;
+  --border-subtle:    #DEDFE0;
+  --divider:          #DEDFE0;
+  --divider-1:        #0B0C0E0A;  /* hairline form divider */
+  --divider-2:        #EBECEC;    /* tab divider */
+  --divider-3:        #0B0C0E1F;
+  --line-input:       #18191B;
+
+  /* Icon */
+  --icon-1: #070808;  /* primary */
+  --icon-3: #18191B;  /* tertiary */
+  --icon-4: #38393D;  /* quaternary */
+
+  /* Functional surfaces */
+  --success-fg:  #00AB6C;
+  --success-bg:  #EAF9EB;
+  --warning-fg:  #F59505;
+  --warning-bg:  #FFF7EB;
+  --danger-fg:   #ED4178;
+  --danger-bg:   #FEEEED;
+
+  /* Trading semantics */
+  --buy:   #00AB6C;
+  --buy-hover:  #2AD36C;
+  --buy-press:  #05903C;
+  --sell:  #ED4178;
+  --sell-hover: #E35582;
+  --sell-press: #CA2458;
+
+  /* Button colors */
+  --btn-primary:        #0B0C0E;
+  --btn-primary-hover:  #42444D;
+  --btn-primary-press:  #000000;
+  --btn-secondary:        #F3F4F7;
+  --btn-secondary-hover:  #F7F8FA;
+  --btn-secondary-press:  #EAEBEE;
+  --btn-brand:        #F59505;
+  --btn-brand-hover:  #F6A01E;
+  --btn-brand-press:  #DC8605;
+
+  /* ===== Layer 3 · Radii / elevation (inferred — kit has no radius/shadow tokens) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(11,12,14,.06);
+  --shadow-md: 0 4px 16px rgba(11,12,14,.08);
+  --shadow-lg: 0 12px 40px rgba(11,12,14,.12);
+  --shadow-pop: 0 8px 32px rgba(11,12,14,.14);
+
+  /* ===== Spacing scale ================================================== */
+  --space-0:  0px;
+  --space-2:  2px;
+  --space-4:  4px;
+  --space-6:  6px;
+  --space-8:  8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+
+  /* ===== Type families ================================================== */
+  --font-display: 'Switzer', 'PingFang SC', system-ui, sans-serif;
+  --font-ui:      'IBM Plex Sans', 'PingFang SC', system-ui, sans-serif;
+  --font-num:     'Switzer', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+/* ===== Dark theme ======================================================= */
+[data-theme="dark"], .dark {
+  --fg-1:        #FFFFFF;
+  --fg-2:        #EAEAED;
+  --fg-3:        #8E8E92;
+  --fg-4:        #57585C;
+  --fg-disabled: #38383B;
+  --fg-brand:    #F7AA37;
+  --fg-inverse:  #070808;
+  --fg-always-black: #070808;
+  --fg-always-white: #FFFFFF;
+  --fg-success:  #2BC235;
+  --fg-error:    #F7594B;
+  --fg-tips:     #131516;
+
+  --bg-base:     #070808;
+  --bg-layer:    #131516;
+  --bg-pop:      #131516;
+  --bg-inverse:  #0B0C0E;
+  --bg-input:    #18191B;
+  --bg-brand:    #311E01;
+  --bg-orange:   #431407;
+  --bg-tooltip:  #38393D;
+  --bg-mask:     #0E0F1180;
+
+  --fill-1: #1F2023;
+  --fill-2: #1F2023;
+  --fill-3: #18191B;
+
+  --border-primary:   #FFFFFF1F;
+  --border-secondary: #FFFFFF30;
+  --border-selected:  #FFFFFF;
+  --border-subtle:    #1F2023;
+  --divider:          #1F2023;
+  --divider-1:        #FFFFFF14;
+  --divider-2:        #1F2023;
+  --divider-3:        #FFFFFF33;
+  --line-input:       #F7F7FA;
+
+  --icon-1: #FFFFFF;
+  --icon-3: #38393D;
+  --icon-4: #18191B;
+
+  --success-bg: #072108;
+  --warning-bg: #2D1B00;
+  --danger-bg:  #2F0C08;
+
+  --btn-primary:        #FFFFFF;
+  --btn-primary-hover:  #F2F2F2;
+  --btn-primary-press:  #E5E5E5;
+  --btn-secondary:        #262626;
+  --btn-secondary-hover:  #323232;
+  --btn-secondary-press:  #141414;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.5);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.6);
+  --shadow-pop: 0 8px 32px rgba(0,0,0,.55);
+}
+
+/* ============================================================
+   Type roles — apply as classes or copy declarations.
+   Display & numerals → Switzer.  UI/headings/body → IBM Plex Sans.
+   ============================================================ */
+.obe-d1 { font-family: var(--font-display); font-weight: 600; font-size: 80px; line-height: 88px; letter-spacing: -0.02em; }
+.obe-d2 { font-family: var(--font-display); font-weight: 600; font-size: 56px; line-height: 1.1;  letter-spacing: -0.02em; }
+
+.obe-h1 { font-family: var(--font-display); font-weight: 600; font-size: 48px; line-height: 1.08; letter-spacing: -0.015em; }
+.obe-h2 { font-family: var(--font-display); font-weight: 600; font-size: 40px; line-height: 1.1;  letter-spacing: -0.01em; }
+.obe-h3 { font-family: var(--font-display); font-weight: 600; font-size: 32px; line-height: 1.12; }
+.obe-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 28px; line-height: 1.2; }
+.obe-h5 { font-family: var(--font-ui); font-weight: 600; font-size: 24px; line-height: 1.3; }
+
+.obe-s5 { font-family: var(--font-ui); font-weight: 600; font-size: 18px; line-height: 1.3; }
+.obe-s6 { font-family: var(--font-ui); font-weight: 500; font-size: 18px; line-height: 1.3; }
+
+.obe-b1 { font-family: var(--font-display); font-weight: 500; font-size: 16px; line-height: 1.4; }
+.obe-b2 { font-family: var(--font-ui); font-weight: 400; font-size: 16px; line-height: 1.5; }
+.obe-b3 { font-family: var(--font-ui); font-weight: 500; font-size: 14px; line-height: 1.45; }
+.obe-b4 { font-family: var(--font-ui); font-weight: 400; font-size: 14px; line-height: 1.45; }
+.obe-b5 { font-family: var(--font-ui); font-weight: 600; font-size: 12px; line-height: 1.35; }
+.obe-b6 { font-family: var(--font-ui); font-weight: 400; font-size: 12px; line-height: 1.35; }
+.obe-b8 { font-family: var(--font-ui); font-weight: 400; font-size: 10px; line-height: 1.3; }
+
+/* Tabular numerals for prices / balances */
+.obe-num { font-family: var(--font-num); font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; letter-spacing: -0.01em; }

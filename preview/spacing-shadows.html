@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-ui);background:#F7F7FA;padding:26px;box-sizing:border-box;color:var(--fg-1)}
+  .row{display:flex;gap:20px}
+  .item{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .box{width:120px;height:70px;background:#fff;border-radius:12px}
+  .v{font-family:var(--font-mono);font-size:10px;color:var(--fg-3)}
+</style></head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box" style="box-shadow:0 1px 2px rgba(11,12,14,.06)"></div><div class="v">sm</div></div>
+    <div class="item"><div class="box" style="box-shadow:0 4px 16px rgba(11,12,14,.08)"></div><div class="v">md</div></div>
+    <div class="item"><div class="box" style="box-shadow:0 12px 40px rgba(11,12,14,.12)"></div><div class="v">lg</div></div>
+    <div class="item"><div class="box" style="box-shadow:0 8px 32px rgba(11,12,14,.14)"></div><div class="v">pop / sheet</div></div>
+  </div>
+  <div class="v" style="margin-top:16px">Inferred. Light = soft low-contrast shadows; dark leans on value steps + borders.</div>
+</body></html>

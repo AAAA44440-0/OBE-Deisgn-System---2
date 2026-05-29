@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-ui);background:var(--bg-base);padding:14px 18px;box-sizing:border-box;color:var(--fg-1)}
+  .r{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--divider-1)}
+  .r:last-child{border-bottom:0}
+  .coin{width:34px;height:34px;border-radius:50%}
+  .meta{flex:1}
+  .pair{font-weight:600;font-size:15px}
+  .vol{font-size:11px;color:var(--fg-3);font-family:var(--font-num)}
+  .px{text-align:right;font-family:var(--font-num);font-variant-numeric:tabular-nums;font-weight:600;font-size:15px}
+  .chg{min-width:74px;text-align:center;border-radius:8px;padding:6px 0;color:#fff;font-family:var(--font-num);font-weight:600;font-size:13px}
+  .up{background:#00AB6C}.dn{background:#ED4178}
+</style></head>
+<body>
+  <div class="r">
+    <img class="coin" src="https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/svg/color/btc.svg">
+    <div class="meta"><div class="pair">BTC/USDT</div><div class="vol">Vol 1.2B</div></div>
+    <div class="px">64,182.50</div>
+    <div class="chg up">+2.34%</div>
+  </div>
+  <div class="r">
+    <img class="coin" src="https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@master/svg/color/sol.svg">
+    <div class="meta"><div class="pair">SOL/USDT</div><div class="vol">Vol 410M</div></div>
+    <div class="px">148.96</div>
+    <div class="chg dn">−3.71%</div>
+  </div>
+</body></html>

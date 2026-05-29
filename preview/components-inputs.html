@@ -1,0 +1,117 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-ui);background:var(--bg-base);padding:22px 24px;box-sizing:border-box;color:var(--fg-1)}
+  .lbl{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin:0 0 10px}
+  .sec{margin-bottom:22px}
+  .sec:last-child{margin-bottom:0}
+
+  /* input box */
+  .box{display:flex;align-items:center;gap:8px;background:var(--fill-2);border:1.5px solid transparent;border-radius:12px;padding:0 14px;box-sizing:border-box}
+  .box.h48{height:48px}.box.h40{height:40px}.box.h32{height:32px;border-radius:10px}
+  .box input{border:0;background:transparent;outline:0;flex:1;min-width:0;font-family:var(--font-ui);font-size:15px;color:var(--fg-1)}
+  .box.h32 input{font-size:13px}
+  .box input::placeholder{color:var(--fg-3)}
+  .box .pre{color:var(--fg-3);display:inline-flex}
+  .box .suf{font-family:var(--font-num);font-weight:600;color:var(--fg-2);font-size:14px}
+
+  .hover{border-color:var(--border-subtle)}
+  .focus{background:var(--bg-base);border-color:var(--line-input)}
+  .filled input{color:var(--fg-1);font-weight:500}
+  .error{background:var(--bg-base);border-color:var(--danger-fg)}
+  .error .suf{color:var(--danger-fg)}
+  .disabled{background:var(--cmpt-input-disabled,#EAEAED);border-color:transparent;cursor:not-allowed}
+  .disabled input{color:var(--fg-4)}
+  .caret{width:1.5px;height:18px;background:var(--fg-brand);animation:bl 1s steps(1) infinite}
+  @keyframes bl{50%{opacity:0}}
+
+  .grid{display:grid;grid-template-columns:90px 1fr;gap:10px 14px;align-items:center}
+  .name{font-size:12px;font-weight:600;color:var(--fg-2)}
+  .hint{font-size:11px;margin-top:5px}
+  .hint.err{color:var(--danger-fg)}
+  .hint.muted{color:var(--fg-3)}
+  .title{font-size:12px;font-weight:500;color:var(--fg-2);margin-bottom:6px}
+  .txtbtn{font-size:13px;font-weight:600;color:var(--fg-brand);cursor:pointer}
+  .stepper{display:flex;gap:4px}
+  .stepper b{width:26px;height:26px;border-radius:7px;background:var(--bg-base);display:inline-flex;align-items:center;justify-content:center;color:var(--fg-1);border:1px solid var(--border-secondary)}
+  .row{display:flex;gap:12px;align-items:flex-end}
+  .row>div{flex:1}
+  .ann{display:inline-block;font-size:10px;font-weight:700;color:#fff;background:var(--danger-fg);border-radius:5px;padding:1px 6px;margin-left:6px}
+  svg{width:18px;height:18px}
+</style></head>
+<body>
+
+  <div class="sec">
+    <div class="lbl">States · 默认 / 悬停 / 点击 / 输入 / 输入完成 / 报错 / 禁用</div>
+    <div class="grid">
+      <span class="name">Default</span>      <div class="box h48"><input placeholder="Enter amount" disabled></div>
+      <span class="name">Hover</span>        <div class="box h48 hover"><input placeholder="Enter amount" disabled></div>
+      <span class="name">Focus</span>        <div class="box h48 focus"><span class="caret"></span><input placeholder="" disabled></div>
+      <span class="name">Typing</span>       <div class="box h48 focus filled"><input value="64,1" disabled><span class="caret"></span></div>
+      <span class="name">Filled</span>       <div class="box h48 filled"><input value="64,182.50" disabled></div>
+      <span class="name">Error</span>        <div class="box h48 error"><input value="64,182.50" disabled><span class="pre" style="color:var(--danger-fg)"><i data-lucide="circle-alert"></i></span></div>
+      <span></span><div class="hint err" style="margin-top:-2px">Insufficient balance</div>
+      <span class="name">Disabled</span>     <div class="box h48 disabled"><input value="Unavailable" disabled></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="lbl">Sizes · 48 / 40 / 32</div>
+    <div class="row">
+      <div><div class="box h48 focus filled"><input value="48 px" disabled></div></div>
+      <div><div class="box h40 filled"><input value="40 px" disabled></div></div>
+      <div><div class="box h32 filled"><input value="32 px" disabled></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="lbl">Types · 普通 / 数字 / 交易 / 登录 / 富文本</div>
+    <div class="row" style="align-items:flex-start">
+      <div>
+        <div class="title">Normal 普通</div>
+        <div class="box h48"><input placeholder="Wallet name" disabled></div>
+      </div>
+      <div>
+        <div class="title">Number 数字</div>
+        <div class="box h48 filled"><input value="10" disabled><span class="stepper"><b><i data-lucide="minus"></i></b><b><i data-lucide="plus"></i></b></span></div>
+      </div>
+    </div>
+    <div class="row" style="align-items:flex-start;margin-top:12px">
+      <div>
+        <div class="title" style="display:flex;justify-content:space-between"><span>Trade 交易</span><span style="color:var(--fg-3);font-family:var(--font-num)">Avail 1,204.55</span></div>
+        <div class="box h48 focus filled"><input value="0.50" disabled><span class="txtbtn">Max</span><span class="suf">BTC</span></div>
+      </div>
+      <div>
+        <div class="title">Login 登录</div>
+        <div class="box h48 filled"><span class="pre"><i data-lucide="lock"></i></span><input type="password" value="123456" disabled><span class="pre" style="color:var(--fg-3)"><i data-lucide="eye-off"></i></span></div>
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <div class="title">Rich text 富文本</div>
+      <div class="box h48" style="height:74px;align-items:flex-start;padding-top:12px"><input value="Add a note…" style="height:100%" disabled></div>
+      <div class="hint muted" style="text-align:right">0 / 200</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="lbl">Anatomy · toggleable slots</div>
+    <div class="title">Amount</div>
+    <div class="box h48 focus filled">
+      <span class="pre"><i data-lucide="bitcoin"></i></span>
+      <input value="0.50" disabled>
+      <span class="txtbtn">Max</span>
+      <span class="suf">BTC</span>
+    </div>
+    <div class="hint muted">≈ 32,091.25 USDT</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+      <span class="ann">1 · title content</span>
+      <span class="ann">2 · left content</span>
+      <span class="ann">3 · right content</span>
+      <span class="ann">4 · bottom content</span>
+    </div>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body></html>

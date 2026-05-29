@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-ui);background:#F7F7FA;padding:20px;box-sizing:border-box}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .pane{border-radius:12px;padding:14px;border:1px solid var(--border-primary)}
+  .pane .ttl{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px}
+  .stack{display:flex;flex-direction:column;gap:6px}
+  .l{height:26px;border-radius:6px;display:flex;align-items:center;padding:0 8px;font-family:var(--font-mono);font-size:10px}
+</style></head>
+<body>
+  <div class="grid">
+    <div class="pane" style="background:#FFFFFF;color:#070808">
+      <div class="ttl">Light</div>
+      <div class="stack">
+        <div class="l" style="background:#FFFFFF;border:1px solid #0000001f">BG-2 base #FFFFFF</div>
+        <div class="l" style="background:#F7F7FA;border:1px solid #0000000f">BG-1 layer #F7F7FA</div>
+        <div class="l" style="background:#F3F4F7;border:1px solid #0000000f">fill-2 input #F3F4F7</div>
+        <div class="l" style="background:#0B0C0E;color:#fff">BG-4 inverse #0B0C0E</div>
+      </div>
+    </div>
+    <div class="pane" style="background:#070808;color:#fff">
+      <div class="ttl">Dark</div>
+      <div class="stack">
+        <div class="l" style="background:#070808;border:1px solid #ffffff1f">BG-2 base #070808</div>
+        <div class="l" style="background:#131516;border:1px solid #ffffff14">BG-1 layer #131516</div>
+        <div class="l" style="background:#1F2023;border:1px solid #ffffff14">fill input #18191B</div>
+        <div class="l" style="background:#FFFFFF;color:#070808">inverse #F7F7FA</div>
+      </div>
+    </div>
+  </div>
+</body></html>

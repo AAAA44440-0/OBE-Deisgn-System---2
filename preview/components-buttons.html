@@ -1,0 +1,91 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html,body{margin:0}
+  body{font-family:var(--font-ui);background:var(--bg-base);padding:22px 24px;box-sizing:border-box;color:var(--fg-1)}
+  .sec{margin-bottom:20px}
+  .sec:last-child{margin-bottom:0}
+  .lbl{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin-bottom:10px}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .col-head{display:flex;gap:10px;margin-bottom:8px}
+  .col-head span{flex:1;font-size:11px;color:var(--fg-3);font-weight:600;text-align:center}
+  .state-row{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+  .state-row .name{width:78px;font-size:12px;font-weight:600;color:var(--fg-2)}
+
+  button{font-family:var(--font-ui);font-weight:600;border:0;border-radius:999px;cursor:pointer;color:#fff;
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+  .grow{flex:1}
+  /* sizes */
+  .s48{height:48px;font-size:15px;padding:0 22px}
+  .s40{height:40px;font-size:14px;padding:0 18px}
+  .s32{height:32px;font-size:13px;padding:0 14px}
+  .s24{height:24px;font-size:12px;padding:0 10px;gap:4px}
+  .ico{padding:0;width:var(--d);height:var(--d)}
+  /* types — default */
+  .primary{background:var(--btn-primary)}
+  .secondary{background:var(--btn-secondary);color:var(--fg-1)}
+  .brand{background:var(--btn-brand)}
+  .buy{background:var(--buy)}
+  .sell{background:var(--sell)}
+  .ghost{background:transparent;color:var(--fg-1);border:1px solid var(--border-secondary)}
+  /* states */
+  .p-hover{background:#42444D}.p-press{background:#000}
+  .b-hover{background:#F6A01E}.b-press{background:#DC8605}
+  .disabled{background:#EAEAED;color:#C3C3C7;cursor:not-allowed}
+  .ico-l svg,.ico-t svg{width:18px;height:18px}
+</style></head>
+<body>
+  <div class="sec">
+    <div class="lbl">Sizes · 48 / 40 / 32 / 24</div>
+    <div class="row">
+      <button class="brand s48">Button</button>
+      <button class="brand s40">Button</button>
+      <button class="brand s32">Button</button>
+      <button class="brand s24">Button</button>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="lbl">Types</div>
+    <div class="row">
+      <button class="primary s40">Primary</button>
+      <button class="secondary s40">Secondary</button>
+      <button class="brand s40">Brand</button>
+      <button class="buy s40">Buy</button>
+      <button class="sell s40">Sell</button>
+      <button class="ghost s40">Ghost</button>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="lbl">States</div>
+    <div class="col-head"><span style="width:78px;flex:none"></span><span>Default</span><span>Hover</span><span>Press</span><span>Disabled</span></div>
+    <div class="state-row">
+      <span class="name">Primary</span>
+      <button class="primary s40 grow">Confirm</button>
+      <button class="p-hover s40 grow">Confirm</button>
+      <button class="p-press s40 grow">Confirm</button>
+      <button class="disabled s40 grow">Confirm</button>
+    </div>
+    <div class="state-row">
+      <span class="name">Brand</span>
+      <button class="brand s40 grow">Deposit</button>
+      <button class="b-hover s40 grow">Deposit</button>
+      <button class="b-press s40 grow">Deposit</button>
+      <button class="disabled s40 grow">Deposit</button>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="lbl">With icons</div>
+    <div class="row">
+      <button class="primary s40 ico-l"><i data-lucide="arrow-down-to-line"></i> Deposit</button>
+      <button class="secondary s40 ico-t">Details <i data-lucide="chevron-right"></i></button>
+      <button class="buy s40 ico-l"><i data-lucide="plus"></i> Buy</button>
+      <button class="primary ico s40" style="--d:40px"><i data-lucide="scan-line"></i></button>
+      <button class="secondary ico s40" style="--d:40px"><i data-lucide="ellipsis"></i></button>
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body></html>
